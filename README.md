@@ -1,6 +1,9 @@
 # CsgoPrizes-Ticket-Farm
 Hey lazy man! D'you want some help to farm your tickets?
 
+- [Quick install](https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js)
+- [OpenUserJS page](https://openuserjs.org/scripts/DeathMiner/CsgoPrizes_Ticket_Farm_%5BCP-FARM%5D)
+
 ### Actually the best way to get some giveways without wasting your time
 
 **How to install:**
