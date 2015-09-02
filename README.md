@@ -5,7 +5,7 @@ Hey lazy man! D'you want some help to farm your tickets?
 
 **How to install:**
 - Install the [Tampermonkey](http://tampermonkey.net/) extension
-- Click **[Install](https://openuserjs.org/install/DeathMiner/CsgoPrizes_Ticket_Farm_[CP-FARM].user.js)**
+- Click **[Install](https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js)**
 - Done!
 
 **How to use it:**
