@@ -13,3 +13,11 @@ Hey lazy man! D'you want some help to farm your tickets?
 - Login with your Steam account
 - Go to [Get Tickets](http://csgoprizes.com/get-tickets)
 - Let the magic happen
+
+## Issues
+Feel free to report any bug, or suggest me some new features!
+
+## Changelog
+
+**CP-FARM v0.1**
+- Initial release
