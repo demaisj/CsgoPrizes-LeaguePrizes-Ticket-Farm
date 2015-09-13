@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CsgoPrizes Ticket Farm [CP-FARM]
 // @namespace    https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm
-// @version      0.1
+// @version      0.2
 // @description  Hey lazy man! D'you want some help to farm your tickets?
 // @author       Death_Miner
 // @match        http://csgoprizes.com/get-tickets
