@@ -71,7 +71,13 @@ catch(e){
     console.error("Cannot start CP-FARM...");
     if (e.message && e.stack) {console.error("ERROR: " + e.message);console.log(e.stack.replace(/(\\(eval at )?<anonymous>[: ]?)|([\s.]*at TM_mEval[\s\S.]*)/g, ""));} else {console.error(e);}
     
-    console.log("Reloading...")
-    document.title = "[CP-FARM] Error, reloading...";
-    window.location.reload();
+    if (document.querySelectorAll(".cf-browser-verification").length > 0){
+        console.log("Cloudflare Anti-DDOS Security, waiting...");
+        document.title = "[CP-FARM] CF-DDOS Security";
+    }
+    else{
+        console.log("Reloading...");
+        document.title = "[CP-FARM] Error, reloading...";
+        window.location.reload();
+    }
 }
