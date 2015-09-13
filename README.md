@@ -22,5 +22,8 @@ Feel free to report any bug, or suggest me some new features!
 
 ## Changelog
 
+**CP-FARM v0.2**
++ Added CF-DDOS Security Check support
+
 **CP-FARM v0.1**
 - Initial release
