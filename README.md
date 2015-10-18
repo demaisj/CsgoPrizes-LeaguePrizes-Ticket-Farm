@@ -1,10 +1,12 @@
-# CsgoPrizes-Ticket-Farm
+# CsgoPrizes-Ticket-Farm & LeaguePrizes-Ticket-Farm
 Hey lazy man! D'you want some help to farm your tickets?
 
 - [Quick install](https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js)
 - [OpenUserJS page](https://openuserjs.org/scripts/DeathMiner/CsgoPrizes_Ticket_Farm_%5BCP-FARM%5D)
 
 ### Actually the best way to get some giveways without wasting your time
+
+Working on **csgoprizes.com** & **leagueprizes.com**.
 
 **How to install:**
 - Install the [Tampermonkey](http://tampermonkey.net/) extension
@@ -21,6 +23,9 @@ Hey lazy man! D'you want some help to farm your tickets?
 Feel free to report any bug, or suggest me some new features!
 
 ## Changelog
+
+**CP-FARM v0.3**
++ Added LeaguePrizes website support
 
 **CP-FARM v0.2**
 + Added CF-DDOS Security Check support
