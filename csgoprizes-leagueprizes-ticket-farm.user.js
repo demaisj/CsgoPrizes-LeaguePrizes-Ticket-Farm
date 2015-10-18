@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         CsgoPrizes & LeaguePrizes Ticket Farm
-// @namespace    https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm
+// @namespace    https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm
 // @version      1.0
 // @description  Hey lazy man! D'you want some help to farm your tickets?
 // @author       Death_Miner
@@ -9,9 +9,9 @@
 // @match        http://csgoprizes.com/get-tickets
 // @match        http://leagueprizes.com/get-tickets
 // @grant        none
-// @updateURL    https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js
-// @downloadURL  https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js
-// @supportURL   https://github.com/DeathMiner/CsgoPrizes-Ticket-Farm/issues
+// @updateURL    https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-leagueprizes-ticket-farm.user.js
+// @downloadURL  https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-leagueprizes-ticket-farm.user.js
+// @supportURL   https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/issues
 // ==/UserScript==
 
 (function(window, document){
