@@ -1,7 +1,7 @@
 # CsgoPrizes & LeaguePrizes Ticket Farm
 Hey lazy man! D'you want some help to farm your tickets?
 
-- [Quick install](https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js)
+- [Quick install](https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-leagueprizes-ticket-farm.user.js)
 - [OpenUserJS page](https://openuserjs.org/scripts/DeathMiner/CsgoPrizes_LeaguePrizes_Ticket_Farm)
 
 ### Actually the best way to get some giveways without wasting your time
@@ -12,7 +12,7 @@ This script is now updating automatically, you don't need to go & check updates 
 
 **How to install:**
 - Install the [Tampermonkey](http://tampermonkey.net/) extension
-- Click **[Install script](https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-ticket-farm.user.js)**
+- Click **[Install script](https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-leagueprizes-ticket-farm.user.js)**
 - Done!
 
 **How to use it:**
