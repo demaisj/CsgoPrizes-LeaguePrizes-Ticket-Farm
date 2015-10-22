@@ -170,6 +170,7 @@
                 // Show the fatal error
                 title("Fatal error, farm cannot work...");
                 popup("error", "The farm cannot work on this page...");
+                location.reload();
             }
         }
     }, false);
