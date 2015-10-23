@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CsgoPrizes & LeaguePrizes Ticket Farm
 // @namespace    https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm
-// @version      1.0
+// @version      1.1
 // @description  Hey lazy man! D'you want some help to farm your tickets?
 // @author       Death_Miner
 // @license      MIT
@@ -24,10 +24,13 @@
      **/
 
     /*
-     * names: All farm names depending on the current website
-     * name:  The current farm name
-     * title: Sets the title of the page
-     * popup: Shows a popup on the page
+     * names:           All farm names depending on the current website
+     * name:            The current farm name
+     * title:           Sets the title of the page
+     * popup:           Shows a popup on the page
+     * reloading:       If we are already reloading
+     * refresh:         Refreshes the page
+     * error_reloading: Reloads the page on error
      */
     var names = {
             "csgoprizes.com": "CP-FARM",
@@ -55,6 +58,25 @@
 
             // Add popup to page
             document.body.appendChild(wrapper);
+        },
+        reloading = false,
+        refresh = function(){
+
+            // Set we are reloading
+            reloading = true;
+
+            // Reload
+            window.location.reload();
+        },
+        error_reloading = function(){
+
+            // Set we are reloading
+            reloading = true;
+
+            // Reload page after a 5sec wait
+            setTimeout(function(){
+                window.location.reload();
+            }, 5000);
         };
 
     // Show the page is loading
@@ -75,14 +97,11 @@
             /*
              * shit:             All shitty elements to remove from the page
              * additionnal_time: How much we wait after countdown is finished
-             * reloading:        If we are already reloading
              * start:            Start time (number of seconds)
              * update:           Runs every second to "spam" the server
-             * refresh:          Refreshes the page
              */
             var shit = document.querySelectorAll("#content iframe, #content #pub, #content #karambit-ads-contest"),
                 additionnal_time = 10,
-                reloading = false,
                 start = false,
                 update = function(){
 
@@ -107,7 +126,7 @@
                             if(additionnal_time <= 0){
                                 title("Server not responding...");
                                 popup("error", "The ticket server is not responding, reloading...");
-                                refresh();
+                                error_reloading();
                             }
 
                             // Increment counter
@@ -131,12 +150,6 @@
                         // "Spam" the server to be the most ticket productive
                         addTicket();
                     }
-                },
-                refresh = function(){
-
-                    // Set we are reloading
-                    reloading = true;
-                    window.location.reload();
                 };
 
             // Remove each shit
@@ -155,6 +168,7 @@
                 // Tell user to login
                 title("Please login");
                 popup("error", "Please login to continue farming...");
+                error_reloading();
             }
         }
         else{
@@ -170,6 +184,7 @@
                 // Show the fatal error
                 title("Fatal error, farm cannot work...");
                 popup("error", "The farm cannot work on this page...");
+                error_reloading();
             }
         }
     }, false);

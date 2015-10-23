@@ -26,6 +26,9 @@ Feel free to report any bug, or suggest me some new features!
 
 ## Changelog
 
+**CP-FARM v1.1**
++ Reloads the page on error after a short delay. Fixes #1
+
 **CP-FARM v1.0**
 + Improved script security
 + Added updateURL & supportURL
