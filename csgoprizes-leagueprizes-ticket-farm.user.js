@@ -81,10 +81,6 @@
         loaded = false,
         init = function(){
 
-            console.log("init")
-            console.log(loaded)
-            console.log(document.readyState)
-
             // Cancel if it was already loaded
             if(loaded){
                 return;
@@ -92,8 +88,6 @@
 
             // Check if DOM is ready to be manipulated
             if(document.readyState == "interactive" || document.readyState == "complete" || document.readyState == "loaded"){
-
-                console.log("inited")
 
                 // Set the loaded flag
                 loaded = true
