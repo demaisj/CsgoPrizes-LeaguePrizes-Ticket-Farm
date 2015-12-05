@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CsgoPrizes & LeaguePrizes Ticket Farm
 // @namespace    https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm
-// @version      1.1
+// @version      1.2
 // @description  Hey lazy man! D'you want some help to farm your tickets?
 // @author       Death_Miner
 // @license      MIT
@@ -16,7 +16,7 @@
 
 (function(window, document){
     /**
-     * CP-FARM v1.0
+     * CP-FARM v1.2
      * Automatic ticket farm system.
      * By Death_Miner, MIT licensied
      *
@@ -77,117 +77,140 @@
             setTimeout(function(){
                 window.location.reload();
             }, 5000);
+        },
+        loaded = false,
+        init = function(){
+
+            console.log("init")
+            console.log(loaded)
+            console.log(document.readyState)
+
+            // Cancel if it was already loaded
+            if(loaded){
+                return;
+            }
+
+            // Check if DOM is ready to be manipulated
+            if(document.readyState == "interactive" || document.readyState == "complete" || document.readyState == "loaded"){
+
+                console.log("inited")
+
+                // Set the loaded flag
+                loaded = true
+
+                // Show the page is loaded
+                title("Page loaded!");
+        
+                // Check if we can add Tickets
+                if(typeof addTicket === "function"){
+        
+                    // Show we are initializing
+                    title("Initializing...")
+        
+                    /*
+                     * shit:             All shitty elements to remove from the page
+                     * additionnal_time: How much we wait after countdown is finished
+                     * start:            Start time (number of seconds)
+                     * update:           Runs every second to "spam" the server
+                     */
+                    var shit = document.querySelectorAll("#content iframe, #content #pub, #content #karambit-ads-contest, #disqus_thread, #content object"),
+                        additionnal_time = 10,
+                        start = false,
+                        update = function(){
+        
+                            // "Spamming" only if we don't reload
+                            if(reloading === false){
+                                
+                                // Get the current second (managed by the website's ticket script)
+                                var sec = parseInt(document.querySelector("#ticketTimer").innerText, 10);
+                                
+                                // If start time not defined, define it!
+                                if(start == false){
+                                    start = sec+1;
+                                }
+                                
+                                // Check if additional time is needed
+                                if(sec === 0){
+        
+                                    // Show counter
+                                    title("-"+additionnal_time+"/"+start);
+                                    
+                                    // If additional time finished, reload to avoid big wait times
+                                    if(additionnal_time <= 0){
+                                        title("Server not responding...");
+                                        popup("error", "The ticket server is not responding, reloading...");
+                                        error_reloading();
+                                    }
+        
+                                    // Increment counter
+                                    additionnal_time -= 1;
+                                }
+                                else{
+        
+                                    // Show normal counter
+                                    title(sec+"/"+start);
+                                }
+                                
+                                // If this element is hidden, 3 tickets has been added
+                                if(document.querySelector(".bouton_get_tickets .cover").style.display == "none"){
+        
+                                    // Reload
+                                    title("+3 tickets, reloading...");
+                                    popup("success", "3 tickets added, reloading page...");
+                                    refresh();
+                                }
+                                
+                                // "Spam" the server to be the most ticket productive
+                                addTicket();
+                            }
+                        };
+        
+                    // Remove each shit
+                    for (var i = shit.length - 1; i >= 0; i--) {
+                        shit[i].remove();
+                    };
+        
+                    // Check if user is logged
+                    if(document.querySelectorAll("#steam-log").length == 0){
+        
+                        // Start farm
+                        setInterval(update, 1000);
+                        title("Started!");
+                    }
+                    else{
+                        // Tell user to login
+                        title("Please login");
+                        popup("error", "Please login to continue farming...");
+                        error_reloading();
+                    }
+                }
+                else{
+                    // We can't add tickets, so the website's ticket script has not loaded
+                    // Check if it is a CF-DDOS Check
+                    if(document.querySelectorAll(".cf-browser-verification").length > 0){
+        
+                        // Show it
+                        title("CF-DDOS Security, waiting...");
+                    }
+                    else{
+        
+                        // Show the fatal error
+                        title("Fatal error, farm cannot work...");
+                        popup("error", "The farm cannot work on this page...");
+                        error_reloading();
+                    }
+                }
+            }
         };
 
     // Show the page is loading
     title("Loading page...");
 
     // Wait for DOM
-    window.addEventListener("DOMContentLoaded", function(){
+    document.onreadystatechange = init;
 
-        // Show the page is loaded
-        title("Page loaded!");
-
-        // Check if we can add Tickets
-        if(typeof addTicket === "function"){
-
-            // Show we are initializing
-            title("Initializing...")
-
-            /*
-             * shit:             All shitty elements to remove from the page
-             * additionnal_time: How much we wait after countdown is finished
-             * start:            Start time (number of seconds)
-             * update:           Runs every second to "spam" the server
-             */
-            var shit = document.querySelectorAll("#content iframe, #content #pub, #content #karambit-ads-contest"),
-                additionnal_time = 10,
-                start = false,
-                update = function(){
-
-                    // "Spamming" only if we don't reload
-                    if(reloading === false){
-                        
-                        // Get the current second (managed by the website's ticket script)
-                        var sec = parseInt(document.querySelector("#ticketTimer").innerText, 10);
-                        
-                        // If start time not defined, define it!
-                        if(start == false){
-                            start = sec+1;
-                        }
-                        
-                        // Check if additional time is needed
-                        if(sec === 0){
-
-                            // Show counter
-                            title("-"+additionnal_time+"/"+start);
-                            
-                            // If additional time finished, reload to avoid big wait times
-                            if(additionnal_time <= 0){
-                                title("Server not responding...");
-                                popup("error", "The ticket server is not responding, reloading...");
-                                error_reloading();
-                            }
-
-                            // Increment counter
-                            additionnal_time -= 1;
-                        }
-                        else{
-
-                            // Show normal counter
-                            title(sec+"/"+start);
-                        }
-                        
-                        // If this element is hidden, 3 tickets has been added
-                        if(document.querySelector(".bouton_get_tickets .cover").style.display == "none"){
-
-                            // Reload
-                            title("+3 tickets, reloading...");
-                            popup("success", "3 tickets added, reloading page...");
-                            refresh();
-                        }
-                        
-                        // "Spam" the server to be the most ticket productive
-                        addTicket();
-                    }
-                };
-
-            // Remove each shit
-            for (var i = shit.length - 1; i >= 0; i--) {
-                shit[i].remove();
-            };
-
-            // Check if user is logged
-            if(document.querySelectorAll("#steam-log").length == 0){
-
-                // Start farm
-                setInterval(update, 1000);
-                title("Started!");
-            }
-            else{
-                // Tell user to login
-                title("Please login");
-                popup("error", "Please login to continue farming...");
-                error_reloading();
-            }
-        }
-        else{
-            // We can't add tickets, so the website's ticket script has not loaded
-            // Check if it is a CF-DDOS Check
-            if(document.querySelectorAll(".cf-browser-verification").length > 0){
-
-                // Show it
-                title("CF-DDOS Security, waiting...");
-            }
-            else{
-
-                // Show the fatal error
-                title("Fatal error, farm cannot work...");
-                popup("error", "The farm cannot work on this page...");
-                error_reloading();
-            }
-        }
-    }, false);
+    // Try to init if DOM is already ready
+    init();
     
 
 

@@ -26,6 +26,10 @@ Feel free to report any bug, or suggest me some new features!
 
 ## Changelog
 
+**CP-FARM v1.2**
++ Refresh on high server traffic. Fixed #2
++ Removes more stuff on the page for a faster loading
+
 **CP-FARM v1.1**
 + Reloads the page on error after a short delay. Fixes #1
 
