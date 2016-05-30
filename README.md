@@ -1,7 +1,7 @@
+# ***CSGOPRIZES & LEAGUESPRIZES WERE REPLACED BY REWARDS.GG! IF YOU WANT A SCRIPT FOR REWARDS.GG [CLICK HERE](https://github.com/DeathMiner/RewardsGG-Farm)!***
+
 # CsgoPrizes & LeaguePrizes Ticket Farm
 Hey lazy man! D'you want some help to farm your tickets?
-
-#####**LOOKING FOR A SCRIPT FOR REWARDS.GG? [CLICK HERE](https://github.com/DeathMiner/RewardsGG-Farm)**
 
 - [Quick install](https://github.com/DeathMiner/CsgoPrizes-LeaguePrizes-Ticket-Farm/raw/master/csgoprizes-leagueprizes-ticket-farm.user.js)
 - [OpenUserJS page](https://openuserjs.org/scripts/DeathMiner/CsgoPrizes_LeaguePrizes_Ticket_Farm)
